@@ -1,0 +1,9 @@
+USER_NAME := neozetare
+KEYMAP_LANG = french
+
+MOUSEKEY_ENABLE = no
+RGBLIGHT_ENABLE = no
+
+SPAMSTRING_ENABLE = yes
+
+DEBUG_ENABLE = no
