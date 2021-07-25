@@ -1,22 +1,28 @@
 #pragma once
 
 #include "quantum.h"
-#include "keymap_lang.h"
+#include "lang.h"
 
 #ifdef CONSOLE_ENABLE
 #   include "print.h"
 #endif
 
+#define USER_SAFE_RANGE SAFE_RANGE
+
+/* MODULES */
+
 #ifdef SPAMSTRING_ENABLE
-#   include "spamstring.h"
+#   include "modules/spamstring/spamstring.h"
+#endif
+
+#ifdef TEAMS_ENABLE
+#   include "modules/teams/teams.h"
 #endif
 
 /* USER-LEVEL KEYCODES */
 
-#define UK_MTMS LCTL(LSFT(LK_M))
-
 enum user_keycodes {
-    UK_MAKE = SAFE_RANGE,
+    UK_MAKE = USER_SAFE_RANGE,
     UK_SSTR,
     KEYMAP_SAFE_RANGE
 };

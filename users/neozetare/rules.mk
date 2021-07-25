@@ -17,3 +17,8 @@ ifeq ($(strip $(SPAMSTRING_ENABLE)), yes)
     OPT_DEFS += -DSPAMSTRING_ENABLE
     SRC += spamstring.c
 endif
+
+ifeq ($(strip $(TEAMS_ENABLE)), yes)
+    OPT_DEFS += -DTEAMS_ENABLE
+    SRC += teams.c
+endif

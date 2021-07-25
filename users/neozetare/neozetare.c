@@ -1,4 +1,5 @@
 #include "neozetare.h"
+#include "sendstring_french.h"
 
 /* USER-LEVEL FUNCTIONS  */
 
@@ -14,6 +15,8 @@ void keyboard_post_init_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    process_record_teams(keycode, record);
+
     switch (keycode) {
         case UK_MAKE:
             break;
@@ -27,6 +30,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return process_record_km(keycode, record);
 }
 
+void matrix_scan_user(void) {
+    matrix_scan_spamstring();
+}
+
 /* DEFAULT KM-LEVEL FUNCTIONS  */
 
 __attribute__ ((weak))
@@ -36,3 +43,6 @@ __attribute__ ((weak))
 bool process_record_km(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
+
+__attribute__ ((weak))
+void matrix_scan_km(void) {}
